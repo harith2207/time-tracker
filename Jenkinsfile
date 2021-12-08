@@ -25,7 +25,7 @@ pipeline {
         stage ('To execute a script') {
             steps {
                 echo "Running script"
-                sh ./sample.sh
+                sh './sample.sh'
             }
         }
     }    
