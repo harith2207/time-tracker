@@ -25,6 +25,7 @@ pipeline {
         stage ('To execute a script') {
             steps {
                 echo "Running script"
+                sh 'chmod +x sample.sh'
                 sh './sample.sh'
             }
         }
