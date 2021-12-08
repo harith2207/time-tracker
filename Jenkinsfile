@@ -12,7 +12,7 @@ pipeline {
             steps {
                 checkout ([
                     $class: 'GitSCM',
-                    branches: [[name: '*/jenkins']],
+                    branches: [[name: '*/params.BRANCH']],
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [[$class: 'CleanBeforeCheckout']],
                     submoduleCfg: [],
