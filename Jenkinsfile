@@ -37,6 +37,13 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        // Archieve Artifacts
+
     }    
+    post {
+        always {
+            archiveArtifacts artifacts:'build/libs/**/*.jar', fingerprint: true
+        }
+    }
 
 }
