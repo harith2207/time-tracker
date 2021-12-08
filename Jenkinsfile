@@ -41,7 +41,7 @@ pipeline {
     }    
     post {
         always {
-            archiveArtifacts artifacts:'build/libs/**/*.jar', fingerprint: true
+            archiveArtifacts artifacts:'/var/lib/jenkins/workspace/timet_pipeline/**/*jar', fingerprint: true
         }
     }
 
