@@ -29,6 +29,11 @@ pipeline {
                 sh './sample.sh'
             }
         }
+        // Maven compile Stage
+        stage ('mvn Build Stage') {
+            echo "Running the Build"
+            sh 'mvn clean install'
+        }
     }    
 
 }
