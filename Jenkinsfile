@@ -31,8 +31,10 @@ pipeline {
         }
         // Maven compile Stage
         stage ('mvn Build Stage') {
-            echo "Running the Build"
-            sh 'mvn clean install'
+            steps {
+                echo "Running the Build"
+                sh 'mvn clean install'
+            }
         }
     }    
 
