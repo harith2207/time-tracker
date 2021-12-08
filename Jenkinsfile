@@ -36,12 +36,12 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        // Archieve Artifacts
+        // Clean Workspace
 
     }    
     post {
         always {
-            archiveArtifacts artifacts:'/var/lib/jenkins/workspace/timet_pipeline/**/*jar', fingerprint: true
+            cleanWs()
         }
     }
 
