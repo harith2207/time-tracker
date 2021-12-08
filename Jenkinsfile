@@ -10,12 +10,14 @@ pipeline {
     stages{
         stage ('Git Checkout') {
             steps {
-                $class: 'GitSCM',
-                branches: [[name: '*/jenkins']],
-                doGenerateSubmoduleConfigurations: false,
-                extensions: [[$class: 'CleanBeforeCheckout']],
-                submoduleCfg: [],
-                userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/myrepo2021-test/time-tracker.git']]
+                checkout ([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/jenkins']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [[$class: 'CleanBeforeCheckout']],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/myrepo2021-test/time-tracker.git']]
+                ])
 
             }
         }
