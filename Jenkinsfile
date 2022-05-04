@@ -16,7 +16,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [[$class: 'CleanBeforeCheckout']],
                     submoduleCfg: [],
-                    userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/myrepo2021-test/time-tracker.git']]
+                    userRemoteConfigs: [[credentialsId: 'git_cred', url: 'https://github.com/harith2207/time-tracker.git']]
                 ])
 
             }
