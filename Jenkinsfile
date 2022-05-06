@@ -37,7 +37,7 @@ pipeline {
         stage ('mvn Build Stage') {
             steps {
                 echo "Running the Build"
-                sh 'mvn clean'
+                sh 'mvn clean package'
             }
         }
         // Clean Workspace
