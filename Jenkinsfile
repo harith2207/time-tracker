@@ -33,7 +33,8 @@ pipeline {
         stage ('mvn Build Stage') {
             steps {
                 echo "Running the Build"
-                sh 'mvn clean package'
+                def mvnHome = tool name: 'apache-maven-3.8.5', type: 'maven'
+                 sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
             }
         }
         // Clean Workspace
