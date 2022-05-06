@@ -2,7 +2,12 @@
 
 pipeline {
     agent any
-
+    
+    tools{
+           maven 'Maven3'
+           jdk 'java11'
+    }
+    
     parameters{
         choice(name: 'BRANCH', choices: ['master', 'jenkins'], description: 'Pick Branch to Build')
     }
@@ -33,7 +38,7 @@ pipeline {
         stage ('mvn Build Stage') {
             steps {
                 echo "Running the Build"
-                sh 'mvn clean package'
+                sh 'mvn clean'
             }
         }
         // Clean Workspace
