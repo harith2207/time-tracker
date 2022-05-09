@@ -43,11 +43,6 @@ pipeline {
         // Clean Workspace
 
     }    
-    post {
-        always {
-            cleanWs()
-        }
-    }
    post {
     failure {
         mail to: 'ssireesha.info@gmail.com',
