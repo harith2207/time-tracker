@@ -29,7 +29,7 @@ pipeline {
         stage ('To execute a script') {
             steps {
                 echo "Running script"
-                sh 'chmod +x sample.sh'
+                 'chmod +x sample.sh'
                 sh './sample.sh'
             }
         }
@@ -48,5 +48,11 @@ pipeline {
             cleanWs()
         }
     }
-
+   post {
+    failure {
+        mail to: 'ssireesha.info@gmail.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+    }
+}
 }
